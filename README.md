@@ -30,7 +30,9 @@ O csv possui informações sobre casas em Amsterdam e o objetivo de trabalhar co
 
 Antes da carga os arquivo csv foi copiado para o centêiner com o comando “docker cp
 /home/r/Documentos/projeto_cassandra/HousingPrices-Amsterdam-August-2021.csv
-73368b6d03e1:/tmp/”. Para receber o csv, foi necessário criar um keyspace e uma tabela com os
+73368b6d03e1:/tmp/”. 
+
+Para receber o csv, foi necessário criar um keyspace e uma tabela com os
 comandos:
 
 CREATE KEYSPACE analises WITH replication = {'class': 'SimpleStrategy',
