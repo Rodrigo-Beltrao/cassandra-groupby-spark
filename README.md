@@ -69,6 +69,8 @@ SELECT * FROM analises.casas;
 
 ## Extração de informações utilizando o Spark
 
+Nesta etapa é realizado o acesso do Apache Spark ao Cassandra por meio da linguagem de programação python.
+
 ![Cassandra3](https://i.imgur.com/VJBRTwI.png)  
 ![Cassandra4](https://i.imgur.com/Gb7P0HJ.png)  
 ![Cassandra5](https://i.imgur.com/1siGDHp.png)        
