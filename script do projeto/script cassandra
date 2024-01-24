@@ -1,0 +1,65 @@
+#Criação de contêiner
+
+docker run --name analises-cassandra --network cassandra-network -v /home/r/Documentos/projeto_cassandra cassandra:4.1.3
+
+docker run --name jupyer-cassandra --network cassandra-network -p 9042:9042 -v /home/r/Documentos/projeto_cassandra cassandra:4.1.3
+
+
+
+#copiar arquivos para o contêiner:
+
+docker cp /home/r/Documentos/projeto_cassandra/. 62e1b6b80427:/tmp/
+
+#entrar no conteiner
+
+docker start jupyer-cassandra
+
+docker exec -it 73368b6d03e1 /bin/bash
+
+cqlsh
+
+
+
+# CRIAÇÃO DE KEYSPACE
+
+CREATE KEYSPACE analises WITH replication = {'class': 'SimpleStrategy', 'replication_factor':'1'};
+
+# CRIAÇÃO DE TABELA
+
+
+CREATE TABLE analises.casas (
+    id TEXT PRIMARY KEY,
+    Address TEXT,
+    Zip TEXT,
+    Price INT,
+    Area INT,
+    Room INT,
+    Lon DOUBLE,
+    Lat DOUBLE
+);
+
+
+
+# PASSAR ARQUIVOS PARA O CONTÊINER
+
+docker cp /home/r/Documentos/projeto_cassandra/HousingPrices-Amsterdam-August-2021.csv 73368b6d03e1:/tmp/
+
+
+# COPIAR ARQUIVOS PARA O CASSANDRA
+
+COPY analises.casas (id, address, zip, price, area, room, lon, lat) FROM '/tmp/HousingPrices-Amsterdam-August-2021.csv' WITH DELIMITER=',';
+
+
+#CONSULTAS NO CASSANDRA
+
+SELECT * FROM analises.casas;
+
+
+
+
+
+
+
+
+
+
