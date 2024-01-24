@@ -26,7 +26,7 @@ network -p 9042:9042 -v /home/r/Documentos/projeto_cassandra cassandra:4.1.3”
 
 ## Realização da carga de dados para o ambiente configurado e execução de todas as atividades necessárias na base para que a infraestrutura fique pronta para a execução de operações com os dados
 
-O csv possui informações sobre casas em Amsterdam e o objetivo de trabalhar com esse csv é obter inshtes sobre a média de preços baseado no número de quartos da residência.
+O csv possui informações sobre casas em Amsterdam e o objetivo de trabalhar com esse csv é obter insights sobre a média de preços baseado no número de quartos da residência.
 
 Antes da carga os arquivo csv foi copiado para o centêiner com o comando “docker cp
 /home/r/Documentos/projeto_cassandra/HousingPrices-Amsterdam-August-2021.csv
