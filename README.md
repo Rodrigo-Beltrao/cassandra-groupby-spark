@@ -1,6 +1,10 @@
 # cassandra-groupby-spark
 Projeto dedicado à criação e configuração do Cassandra para receber carga de dados dados, com ênfase na liberação de acesso para o Apache Spark. Permite operações avançadas, como groupBy, facilitando manipulações distribuídas eficientes.
 
+<p align="center">
+    <img src="https://i.imgur.com/pBYiaGd.jpg" alt="Cassandra">
+</p>      
+
 ## Planejamento básico de infraestrutura necessária para comportar dados
 O cassandra foi criado em um contêiner no docker afim de evitar incompatibilidades com a minha
 máquina. O cassandra foi configurado para liberar o acesso do spark por meio da porta 9042, para
@@ -16,7 +20,9 @@ prontificar a máquina em receber o conjunto de dados:
 -Criação do contêiner com o comando “docker run --name jupyer-cassandra --network cassandra-
 network -p 9042:9042 -v /home/r/Documentos/projeto_cassandra cassandra:4.1.3”
 
-![Cassandra1](https://i.imgur.com/0qy03hI.png)     
+<p align="center">
+    <img src="https://i.imgur.com/0qy03hI.png" alt="Cassandra0">
+</p>        
 
 ## Realização da carga de dados para o ambiente configurado e execução de todas as atividades necessárias na base para que a infraestrutura fique pronta para a execução de operações com os dados
 
